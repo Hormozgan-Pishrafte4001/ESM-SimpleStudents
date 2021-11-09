@@ -3,7 +3,6 @@ from tkinter import Tk, Button, Entry, Label
 class LoginView(Tk):
     def __init__(self, callback1):
         super(LoginView, self).__init__()
-        self.callback1 = callback1
         x = self.winfo_screenwidth()
         self.geometry("300x300+550+150")
         b = Button(self, text="login" , command= self.login_callback)
