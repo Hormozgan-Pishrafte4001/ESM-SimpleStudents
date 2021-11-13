@@ -15,11 +15,13 @@ class LoginView(Tk):
         lbl_user.grid(row=1, column=1)
         lbl_pass = Label(self, text="pass")
         lbl_pass.grid(row=2, column=1)
-        lbl_hm = Label(self, text="HIDDEN MESSAGE")
-        lbl_hm.grid(column=2, row=4)
+        self.lbl_hm = lbl_hm = Label(self, text="HIDDEN MESSAGE")
+
     def login_callback(self):
         u = self.user.get()
         p = self.pass_.get()
         self.callback1(u, p)
 
-
+    def show_message(self , text):
+        self.lbl_hm.config(text=text)
+        self.lbl_hm.grid(row=3, column=1)
