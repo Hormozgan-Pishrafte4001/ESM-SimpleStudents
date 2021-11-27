@@ -1,10 +1,26 @@
-users = [['Hashem', '123'], ['Mammad', '456']]
 
 
-def login(user, pass_):
-    for i in range(len(users)):
-        if user == users[i][0]:
-            if pass_ == users[i][1]:
-                return True
-            return False
-    return False
+
+class User:
+    def __init__(self, user, password):
+        self.user = user
+        self.password = password
+
+
+class Core:
+    def __init__(self) -> None:
+         
+        self.users={}
+
+    def login(self, username, password):
+        if username in self.users:
+             if password == self.users[username].password:
+                   return True 
+        return False
+
+    def add_user(self, username, password):
+        new_ = User(username, password)
+        self.users[username] = new_
+
+
+
