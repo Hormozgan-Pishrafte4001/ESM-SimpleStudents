@@ -1,9 +1,9 @@
 import View
-import model
+from model import Core
 
 
-def callback1(user_name, u_pass):
-    x = model.login(user_name, u_pass)
+def callback1(user_name, user_pass):
+    x = core.login(user_name, user_pass)
     if x is True:
         root.destroy()
         # open user panel
@@ -11,5 +11,6 @@ def callback1(user_name, u_pass):
         root.show_message("your password is Wrong!")  # show message user & password is wrong
 
 
+core = Core()
 root = View.LoginView(callback1)
 root.mainloop()
