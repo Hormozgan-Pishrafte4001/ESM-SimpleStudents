@@ -3,7 +3,6 @@ from model import Core
 
 
 def callback1(user_name, user_pass):
-    core.add_user(user_name, user_pass)
     x = core.login(user_name, user_pass)
     if x is True:
         root.destroy()
